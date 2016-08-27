@@ -1,0 +1,104 @@
+#!/usr/bin/env python
+
+from llist import *
+import sys
+import time
+from rotary_class import RotaryEncoder
+import subprocess
+import datetime
+
+station_ring=dllist()
+ENCODER_STATE=0
+PLAY_STATE=34
+WAIT_STATE=77
+PIN_A = 14 	# Pin 8 
+PIN_B = 15	# Pin 10
+BUTTON = 4	# Pin 7
+LATENCY=0.05
+CURRENT_STATE=0
+ARMED=1
+
+now=datetime.datetime.now()
+WAKE_TIME=now.replace(hour=6, minute=50, second=0, microsecond=0)
+if datetime.datetime.now() > WAKE_TIME:
+	ARMED=0
+
+def switch_event(event):
+	global ENCODER_STATE
+	if event == RotaryEncoder.CLOCKWISE:
+		ENCODER_STATE=1
+	elif event == RotaryEncoder.ANTICLOCKWISE:
+		ENCODER_STATE=2
+	elif event == RotaryEncoder.BUTTONDOWN:
+		ENCODER_STATE=3
+	return
+
+rswitch = RotaryEncoder(PIN_A,PIN_B,BUTTON,switch_event)
+
+
+def initializeStationRing():
+	f=open("/usr/sbin/radiolist", 'r')
+	for line in f:
+		station_ring.append(line.replace("\n", ""))
+
+
+def waitState():
+	global ENCODER_STATE
+	global ARMED
+	print "\n\n=====WAIT STATE====\n\n"
+	while True:
+		time.sleep(LATENCY)
+		now=datetime.datetime.now()
+		WAKE_TIME=now.replace(hour=6, minute=50, second=0, microsecond=0)
+		if (ARMED==0 and datetime.datetime.now() < WAKE_TIME):
+			ARMED=1
+			
+		if ( ENCODER_STATE == 3 or ( now.weekday() < 10 and datetime.datetime.now() > WAKE_TIME and ARMED==1) ) :
+			ENCODER_STATE=0
+			return PLAY_STATE
+	return
+
+def playState():
+	global ENCODER_STATE
+	print "\n\n=====PLAY STATE=====\n\n"
+	command= 'exec mpg321 '+station_ring.first.value+' -a hw:0,0'
+	print command
+	process=subprocess.Popen(command, shell=True)
+	while True:
+		time.sleep(LATENCY)
+		if ENCODER_STATE==1:
+			process.kill()
+			print "\n\n====SCROLL CLK : KILLING CHILD====\n\n"
+			process.wait()
+			print "==============================DONE"
+			station_ring.rotate(1)
+			process=subprocess.Popen('exec mpg321 '+ station_ring.first.value+' -a hw:0,0', shell=True)
+			ENCODER_STATE=0
+		if ENCODER_STATE==2:
+			print "\n\n====SCROLL ANTCLK : KILLING CHILD====\n\n"
+			process.kill()
+			process.wait()
+			print "==============================DONE"
+			station_ring.rotate(-1)
+			process=subprocess.Popen('exec mpg321 '+ station_ring.first.value+ ' -a hw:0,0', shell=True)
+			ENCODER_STATE=0
+		if ENCODER_STATE==3:
+			print "\n\n======BTN PRESS: KILL ALTOGETHER============\n\n"
+			process.kill()
+			process.wait()
+			print "==============================DONE"
+			ENCODER_STATE=0
+			ARMED=0
+			return WAIT_STATE
+	return
+
+initializeStationRing()
+
+while True:
+	if CURRENT_STATE==0 :
+		CURRENT_STATE=waitState()
+	if CURRENT_STATE==PLAY_STATE:
+		CURRENT_STATE=playState()
+	if CURRENT_STATE==WAIT_STATE :
+		CURRENT_STATE=waitState()
+
