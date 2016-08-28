@@ -35,5 +35,30 @@ To remove all of them at once, use this README file:
 grep apt README.md | source /dev/stdin
 ```
 
-Edit the name of the Pi by modifying `/etc/hosts` and `/etc/hostname`, and change the password using `sudo passwd pi`.
+Edit the name of the Pi by modifying `/etc/hosts` and `/etc/hostname`, and change the password using `sudo passwd pi`. 
+
+We will need some packages to build Python libraries and play MP3 streams:
+```bash
+sudo apt-get install mpg321 python2.7-dev
+```
+
+We install the Python libraries we need:
+```bash
+sudo pip install llist
+```
+
+All that's left is to replace `admin` to your username in `firmware.py` at line `radiolist="/home/admin/pi-radio-firmware/firmware/radiolist"`. Now we are ready to test the firmware:
+```bash
+pi-radio-firmware/firmware/firnware.py
+```
+
+You should see something like:
+```
+
+
+=====WAIT STATE====
+
+```
+
+This means the firmware is running. Press `Ctrl+C` to interrupt.
 
