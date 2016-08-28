@@ -8,6 +8,7 @@ import subprocess
 import datetime
 import os
 
+radiolist="/home/admin/pi-radio-firmware/firmware/radiolist"
 station_ring=dllist()
 ENCODER_STATE=0
 PLAY_STATE=34
@@ -39,7 +40,7 @@ rswitch = RotaryEncoder(PIN_A,PIN_B,BUTTON,switch_event)
 
 
 def initializeStationRing():
-	f=open("/home/pi/radiolist", 'r')
+	f=open(radiolist, 'r')
 	for line in f:
 		station_ring.append(line.replace("\n", ""))
 

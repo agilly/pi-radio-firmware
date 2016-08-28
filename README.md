@@ -4,7 +4,11 @@
 Here, we describe how to recycle old AM/FM radios and turn them into web-connected internet radios using a Raspberry Pi.
 
 ## Configuring the Pi
+
+Our preferred distribution would have been Arch, but since it had sone difficulty dealing with the Wifi adapter driver, we fall back to Raspbian.
+
 First, install Raspbian using NOOBS following these simple steps:
+
 * Download the NOOBS network install image from the Raspberry Pi website
 * You will get a very small (~25Mb) zip file. Put the content of that onto an SD card that you will just have formatted in FAT32 format
 * If you have an HDMI display, you might need to create a `config.txt` file in the root of the SD card. I have a 7" capacitive display, which needs the lines described in [`boot/config.txt`](boot/config.txt).
@@ -30,3 +34,6 @@ To remove all of them at once, use this README file:
 ```bash
 grep apt README.md | source /dev/stdin
 ```
+
+Edit the name of the Pi by modifying `/etc/hosts` and `/etc/hostname`, and change the password using `sudo passwd pi`.
+
