@@ -5,6 +5,7 @@ Here, we describe how to recycle old AM/FM radios and turn them into web-connect
 
 ## Configuring the Pi
 First, install Raspbian using NOOBS following these simple steps:
+
 * Download the NOOBS network install image from the Raspberry Pi website
 * You will get a very small (~25Mb) zip file. Put the content of that onto an SD card that you will just have formatted in FAT32 format
 * If you have an HDMI display, you might need to create a `config.txt` file in the root of the SD card. I have a 7" capacitive display, which needs the lines described in [`boot/config.txt`](boot/config.txt).
