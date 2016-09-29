@@ -1,9 +1,23 @@
 # Giving a new life to your old vintage radio using a Raspberry Pi
 
-## Description
-Here, we describe how to recycle old AM/FM radios and turn them into web-connected internet radios using a Raspberry Pi.
+## Introduction
+Old AM/FM radios have a charm of their own. Their robust materials, polished surfaces and mellow sound rendition provide a listening experience unlike any other. And of course, once you take a peek inside, the palm-sized adjustable capacitors and transistor-based amplifiers will warm the heart of any electronics enthusiast. However, not all of them can stand the test of time. It's now been almost 60 years since portable AM/FM radio had its heyday, and although some models were definitely built to last (like the Beolit series from B&O), some others have aged badly.
+Here I'll show you a few very easy steps to turn your dusty old radio set into a WiFi radio, using only a Raspberry Pi and a few programming skills. The whole operation should cost you less than 100$, which is still less than many high-end internet radios.
 
-## Configuring the Pi
+## Playing (radio) doctor
+
+The first step is to assess the state your radio is in. This is important, because it will determine
+
+## A bit of history
+First, a bit of nomenclature. Nowadays radio receivers mostly deal with digital signals (via <strong>DAB</strong> - <strong>D</strong>igital <strong>A</strong>udio <strong>B</strong>roadcast), whether it's the media player in your car or the wifi chip in your laptop. However in the 60's, radio signals were mostly analog. This meant that there were two ways to transmit information: amplitude and frequency modulation.
+
+![](http://lossenderosstudio.com/img/am-fm.gif)
+
+> Remember, the antenna makes a difference only for FM/UKW. For AM bands like SW, MW and LW, try changing the orientation of your radio set to improve reception.
+
+Quite often, for tri-band radio sets, you will find that FM reception is still quite decent, whereas the AM bands have deteriorated notably, leaving you with few or no stations detectable on your receiver.
+
+## Setting up the Raspberry Pi
 
 Our preferred distribution would have been Arch, but since it had sone difficulty dealing with the Wifi adapter driver, we fall back to Raspbian.
 
