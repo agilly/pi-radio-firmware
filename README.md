@@ -11,7 +11,9 @@ The first step is to assess the state your radio is in. This is important, becau
 ## A bit of history
 First, a bit of nomenclature. Nowadays radio receivers mostly deal with digital signals (via **DAB** - **D**igital **A**udio **B**roadcast), whether it's the media player in your car or the wifi chip in your laptop. However in the 60's, radio signals were mostly analog. This meant that there were two ways to transmit information: amplitude and frequency modulation. Basically, a modulating wave (the sound you want to transmit) is embedded in a carrier wave (the frequency of the station you are tuned into). The simplest way to transmit the modulating signal is to boost the carrier wave when the modulating signal is strong, and to attenuate it when it is weak. In this way the "height", or **amplitude** of the carrier is changed, this procedure is called amplitude modulation or **AM**. In the case of frequency modulation or **FM**, the carrier is compressed (frequency increase) when the signal is strong and dilated (frequency decrease) when it is weak. Here, the frequency of the transmitted signal fluctuates slightly around the carrier frequency, the radio therefore had to listen to a narrow "band" of wavelengths instead of a single frequency. This explains why FM receivers generally have a more complex design than AM receivers, which were historically the first to be developed. Note that in both cases, the frequency of the carrier has to be much higher than that of our signal.
 
-![](http://lossenderosstudio.com/img/am-fm.gif =100x)
+<div style="text-align:center;align:center;">
+<img src="http://lossenderosstudio.com/img/am-fm.gif" align="center" width=70%>
+</div>
 
 > Remember, the antenna makes a difference only for FM/UKW. For AM bands like SW, MW and LW, try changing the orientation of your radio set to improve reception.
 
