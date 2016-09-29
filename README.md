@@ -9,7 +9,7 @@ Here I'll show you a few very easy steps to turn your dusty old radio set into a
 The first step is to assess the state your radio is in. This is important, because it will determine
 
 ## A bit of history
-First, a bit of nomenclature. Nowadays radio receivers mostly deal with digital signals (via <strong>DAB</strong> - <strong>D</strong>igital <strong>A</strong>udio <strong>B</strong>roadcast), whether it's the media player in your car or the wifi chip in your laptop. However in the 60's, radio signals were mostly analog. This meant that there were two ways to transmit information: amplitude and frequency modulation.
+First, a bit of nomenclature. Nowadays radio receivers mostly deal with digital signals (via **DAB** - **D**igital **A**udio **B**roadcast), whether it's the media player in your car or the wifi chip in your laptop. However in the 60's, radio signals were mostly analog. This meant that there were two ways to transmit information: amplitude and frequency modulation.
 
 ![](http://lossenderosstudio.com/img/am-fm.gif)
 
