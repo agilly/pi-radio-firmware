@@ -23,11 +23,15 @@ Nowadays radio receivers mostly deal with digital signals (via **DAB** - **D**ig
 
 ![http://lossenderosstudio.com/img/am-fm.gif](http://lossenderosstudio.com/img/am-fm.gif)
 
+Both modes of transmission are fundamentally different, and require separate circuits to work. The FM receiver is a bit more 
+
 > If you can't get any stations, it might just be a reception problem. Try moving closer to a window. Extending and moving the telescopic antenna around makes a difference only for FM/UKW. For AM bands like SW, MW and LW, try changing the orientation of your radio set to improve reception.
 
 Quite often, for tri-band radio sets, you will find that FM reception is still quite decent, whereas the AM bands have deteriorated notably, leaving you with few or no stations detectable on your receiver.
 
-On older models, oscillating circuits were calibrated to the AM/FM ranges by adjusting several capacitors, which might have gotten slightly shifted with age. This means the radio will "listen" to a wrong part of the frequency spectrum, where no stations are emitting. Recalibrating such a circuit is possible, but requires a lot of skill and access to the original engineer's documentation for your model.
+![http://jvgavila.com/ftone_13.jpg](http://jvgavila.com/ftone_13.jpg)
+
+On older models, oscillating circuits were calibrated to the AM/FM ranges by adjusting several capacitors, which might have gotten slightly shifted with age (they look like the metal boxes with a screw on top in the image above). This means the radio will "listen" to a wrong part of the frequency spectrum, where no stations are emitting. Recalibrating such a circuit is possible, but requires a lot of skill and access to the original engineer's documentation for your model.
 
 ## Setting up the Raspberry Pi
 
