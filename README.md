@@ -21,11 +21,9 @@ Let's see what's broken: first, try turning your radio on.
 ## A bit of history
 Nowadays radio receivers mostly deal with digital signals (via **DAB** - **D**igital **A**udio **B**roadcast), whether it's the media player in your car or the wifi chip in your laptop. However in the 60's, radio signals were mostly analog. This meant that there were two ways to transmit information: amplitude and frequency modulation. Basically, a modulating wave (the sound you want to transmit) is embedded in a carrier wave (the frequency of the station you are tuned into). The simplest way to transmit the modulating signal is to boost the carrier wave when the volume of your signal is strong, and to attenuate it when it is weak. In this way the "height", or **amplitude** of the carrier is changed, this procedure is called amplitude modulation or **AM**. In the case of frequency modulation or **FM**, the carrier is compressed (frequency increase) when the signal is strong and dilated (frequency decrease) when it is weak. Here, the frequency of the transmitted signal fluctuates slightly around the carrier frequency, the radio therefore had to listen to a narrow "band" of wavelengths instead of a single frequency. This explains why FM receivers generally have a more complex design than AM receivers, which were historically the first to be developed. Note that in both cases, the frequency of the carrier has to be much higher than that of our signal.
 
-<div style="text-align:center;align:center;">
-<img src="http://lossenderosstudio.com/img/am-fm.gif" align="center" width=70%>
-</div>
+![AM-FM](http://lossenderosstudio.com/img/am-fm.gif)
 
-> Remember, the antenna makes a difference only for FM/UKW. For AM bands like SW, MW and LW, try changing the orientation of your radio set to improve reception.
+> If you can't get any stations, it might just be a reception problem. Try moving closer to a window. Extending and moving the telescopic antenna around makes a difference only for FM/UKW. For AM bands like SW, MW and LW, try changing the orientation of your radio set to improve reception.
 
 Quite often, for tri-band radio sets, you will find that FM reception is still quite decent, whereas the AM bands have deteriorated notably, leaving you with few or no stations detectable on your receiver.
 
