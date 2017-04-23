@@ -43,7 +43,23 @@ Fortunately, there are a lots of enthusiasts out there, and the schematics for m
 
 In our case, the set was a Roberts R900, for which Valve Radio offers downloadable schematics:
 
-![http://www.valve-radio.co.uk/wp-content/uploads/2013/10/2.jpg](http://www.valve-radio.co.uk/wp-content/uploads/2013/10/2.jpg)
+![2.jpg](https://bitbucket.org/repo/8LMRgR/images/1855611607-2.jpg)
+
+### Making sense of it all
+
+This will get easier with habit, but the schematics will usually help you. The idea is to identify the different stages, which will have their components grouped together in an orderly fashion. The schematic above is annotated to make reading easier:
+
+* In red, the power block. It's easy to notice due to the oversized transformer and the mention of 240V AC.
+* in orange, the oscillator and FM front-end
+* in blue, the AM/FM amplifier and detector
+* in light green, the DIN inlet. This type of connector has almost completely disappeared nowadays, but was fairly common in the 70's and 80's. On some models (this one included) it can be used to feed in an auxiliary source of audio (AUX), providing non-invasive access to the loudspeaker. You can see the input line feeding into the amplifier stage just before C37.
+* in purple, the amplifier stage. This is what will boost the sound coming in from either the AM/FM stage or the DIN plug to acceptable levels. The loudspeaker pictogram and the 3 variable resistors controlling volume and bass/treble filters (VR1, VR2 and VR3) are clearly visible.
+
+These are actually quite easy to figure out on this model, because it is modern enough to feature integrated circuits (IC). These have standardised part numbers which lead you to their datasheets, most of which are found online.
+
+## Choosing the method
+
+
 
 ## Setting up the Raspberry Pi
 
