@@ -33,6 +33,18 @@ Quite often, for tri-band radio sets, you will find that FM reception is still q
 
 On older models, oscillating circuits were calibrated to the AM/FM ranges by adjusting several capacitors, which might have gotten slightly shifted with age (they look like the metal boxes with a screw on top in the image above). This means the radio will "listen" to a wrong part of the frequency spectrum, where no stations are emitting. Recalibrating such a circuit is possible, but requires a lot of skill and access to the original engineer's documentation for your model.
 
+## Getting hold of the schematics
+
+This is an important step. Although manufacturers usually followed pretty similar rules in assembling their designs, the insides of two models might differ significantly.
+
+> 50 years ago, people were a bit more comfortable with tinkering, so some models were actually shipped with the schematics inside the radio itself. Remove the bottom or back cover and if you're lucky, you'll find the precious slip of paper inside a small envelope glued to the chassis.
+
+Fortunately, there are a lots of enthusiasts out there, and the schematics for many models were painstakingly scanned. Good places to check out are [Radio Museum](http://www.radiomuseum.org/) and [Valve Radio](http://www.valve-radio.co.uk), other than that, GIYF. Consider donating to these websites, as they are all maintained by amateurs.
+
+In our case, the set was a Roberts R900, for which Valve Radio offers downloadable schematics:
+
+![http://www.valve-radio.co.uk/wp-content/uploads/2013/10/2.jpg](http://www.valve-radio.co.uk/wp-content/uploads/2013/10/2.jpg)
+
 ## Setting up the Raspberry Pi
 
 Our preferred distribution would have been Arch, but since it had sone difficulty dealing with the Wifi adapter driver, we fall back to Raspbian.
