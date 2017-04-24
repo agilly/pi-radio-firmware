@@ -59,7 +59,12 @@ These are actually quite easy to figure out on this model, because it is modern 
 
 ## Choosing the method
 
+Now that we have a rough idea of what the components are doing, we must choose how to feed in the sound from our Raspberry Pi, which will deliver the internet radio part of the assembly.
 
+* **the non-invasive method** where you use the DIN plug to feed in the sound. The advantage is that you retain the AM/FM capability of your set. Use this for radios that are in an overall good working order, or models that do not have sufficient free space in the chassis to accommodate a Raspberry Pi. The disadvantage here is mostly aesthetic, as you'll essentially have your Pi in an external casing, with its own power source and controls.
+* **the invasive method** where you disconnect the amplification stage from the rest and solder in a connection to your Pi. The disadvantage here is obvious, as you are modifying (although not irremediably) the electronics of your radio. Use this method for sets that are heavily damaged, if you don't think you are able or likely to repair it in the future, or if having an "invisible" modification is important to you. I would still advise to keep all the components you remove so that they can be fitted back in the future. This is best done on cheap run-of-the-mill models, as opposed to rarer designs that are best kept as they are.
+
+For our Roberts R900, the FM receiving part was heavily damaged, so we went for the invasive method. On another model, the Beolit 600 which is a magnificent piece of engineering, we went for the non-invasive one.
 
 ## Setting up the Raspberry Pi
 
