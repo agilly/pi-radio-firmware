@@ -11,7 +11,9 @@ Here I'll show you a few very easy steps to turn your dusty old radio set into a
 * a WiFi dongle (the RPi 3 has an embedded WiFi chip, so you might not need this, although reception might be poor if your radio is far from your router)
 * a 3.5mm ground loop isolator (they go for around 10$ on Amazon). Not needed if you use the radio to power the Pi.
 * a 3.5mm Jack cable
+* a 3.5mm Jack female plug
 * a soldering iron and some solder wire
+* a rotary encoder (usually bought in 10x packs), which we'll use to replace the tuning dial. 
 
 
 ## Playing (radio) doctor
@@ -78,7 +80,7 @@ For our Roberts R900, the FM receiving part was heavily damaged, so we went for 
 
 ## Setting up the Raspberry Pi
 
-Our preferred distribution would have been Arch, but since it had sone difficulty dealing with the Wifi adapter driver, we fall back to Raspbian.
+Our preferred distribution would have been Arch, but since it had some difficulty dealing with our Wifi adapter driver, we used Raspbian.
 
 First, install Raspbian using NOOBS following these simple steps:
 
@@ -135,6 +137,12 @@ You should see something like:
 
 This means the firmware is running. Press `Ctrl+C` to interrupt.
 
+### Installing the firmware
+
+```
+TODO
+```
+
 ### Customising the list of channels
 
 The list of channels the radio will loop through is described in the [`radiolist`](firmware/radiolist) file. The original one might not be very helpful for you (it contains mostly French and Austrian stations), so feel free to edit it. The syntax is pretty straightforward, each line is composed of:
@@ -146,3 +154,14 @@ address     language_code    name
 separated by tabs. The language doesn't matter so much anymore. In a previous version of the firmware, the Pi would access Google speech to pronounce the `name` field in the language specified by `language_code`. For example, you would hear "_BBC Radio 4_" a few instants before the station started playing. But Google decided to withdraw this service, so now you must add your own recording of the station name (or if you don't want this, an empty MP3). 
 
 > Each entry in the `name` column must correspond to a MP3 file in the same directory as the firmware. For example if the name is `BBC_Radio_4`, the script will expect to find `./BBC_Radio_4.mp3`.
+
+## Interfacing the Pi with your radio
+
+### Invasive method
+
+* Locate the point at which the tuner stage connects to the amplifier stage (in the schematic above, the branch connecting Pin 9 of the TDA1220B to C37) and de-solder the upstream end of the component (in our case the 3KΩ resistor just after pin 9 of TDA1220B).
+
+
+* Solder two 15cm long cables to the ground pin and one of the Left or Right pins of your jack plug (black and yellow or red in image below). If you are unsatisfied with having only 1 channel, it is possible to hack together a small Stereo>Mono mixer like [this one](https://www.sonelec-musique.com/electronique_realisations_melangeur_audio_passif_004.html) (link in french, great website).
+
+![http://i42.tinypic.com/34rw3mg.jpg](http://i42.tinypic.com/34rw3mg.jpg)
