@@ -137,6 +137,10 @@ You should see something like:
 
 This means the firmware is running. Press `Ctrl+C` to interrupt.
 
+### Connecting to your local wifi network
+
+We assume you know how to do this, but in case you don't, there are guides all over the internet, for example [here](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md).
+
 ### Installing the firmware
 
 ```
@@ -162,6 +166,12 @@ separated by tabs. The language doesn't matter so much anymore. In a previous ve
 * Locate the point at which the tuner stage connects to the amplifier stage (in the schematic above, the branch connecting Pin 9 of the TDA1220B to C37) and de-solder the upstream end of the component (in our case the 3KΩ resistor just after pin 9 of TDA1220B).
 
 
-* Solder two 15cm long cables to the ground pin and one of the Left or Right pins of your jack plug (black and yellow or red in image below). If you are unsatisfied with having only 1 channel, it is possible to hack together a small Stereo>Mono mixer like [this one](https://www.sonelec-musique.com/electronique_realisations_melangeur_audio_passif_004.html) (link in french, great website).
+* Solder a 15cm long cables to the ground pin (black below) and another 15cm cable to either one of the Left or Right pins of your jack plug (yellow or red in image below). If you are unsatisfied with having only 1 channel, it is possible to hack together a small Stereo>Mono mixer like [this one](https://www.sonelec-musique.com/electronique_realisations_melangeur_audio_passif_004.html) (link in french, great website).
 
 ![http://i42.tinypic.com/34rw3mg.jpg](http://i42.tinypic.com/34rw3mg.jpg)
+
+* Solder the cable connected to the ground pin (black above) to any ground point of your radio, e.g. a metallic part of the chassis or the ground end of C39. Solder the other cable to the connection you opened at step 1.
+
+* Connect the ground loop isolator to your male jack, and the male end of your isolator into the Pi's audio output.
+
+* Now try to
