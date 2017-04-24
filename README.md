@@ -4,6 +4,16 @@
 Old AM/FM radios have a charm of their own. Their robust materials, polished surfaces and mellow sound rendition provide a listening experience unlike any other. And of course, once you take a peek inside, the palm-sized adjustable capacitors and transistor-based amplifiers will warm the heart of any electronics enthusiast. However, not all of them can stand the test of time. It's now been almost 60 years since portable AM/FM radio had its heyday, and although some models were definitely built to last (like the Beolit series from B&O), some others have aged badly.
 Here I'll show you a few very easy steps to turn your dusty old radio set into a WiFi radio, using only a Raspberry Pi and a few programming skills. The whole operation should cost you less than 100$, which is still less than many high-end internet radios.
 
+## What you'll need
+
+* a more-or-less working AM/FM radio (see below)
+* a Raspberry Pi with SD card. The setup below uses a v.2 model B. The power block is optional but not having it means you have to find a powerful enough +5V source in your radio.
+* a WiFi dongle (the RPi 3 has an embedded WiFi chip, so you might not need this, although reception might be poor if your radio is far from your router)
+* a 3.5mm ground loop isolator (they go for around 10$ on Amazon). Not needed if you use the radio to power the Pi.
+* a 3.5mm Jack cable
+* a soldering iron and some solder wire
+
+
 ## Playing (radio) doctor
 
 The first step is to assess the state your radio is in. This is important, because it will determine how we are going to interface the Raspberry Pi to the radio's circuitry. Without going in too much detail, a radio receiver is divided into several parts, or "stages" that feed into each other like a pipeline. By doing a variety of tests we can diagnose if something's wrong, and if yes, where the problem is. The first stage is the receiving end, which consists of an antenna and one or several RF amplifiers. This stage receives the radio signal and boosts it. That is then fed into a detector, which separates the carrier and modulating waves. One or several amplifiers then boost the signal once again to make it audible through a high-powered speaker, usually a few watts. (see a very good guide [here](http://www2.eng.cam.ac.uk/~dmh/ptialcd/trf/trf.htm).)
@@ -13,7 +23,7 @@ The first step is to assess the state your radio is in. This is important, becau
 Let's see what's broken: first, try turning your radio on.
 
 * If you hear no sound at all even at full volume, no matter how you turn the tuning button, there is probably an issue with the power block. This is usually a bulky circuit with one or several transformers. Good news is, these are fairly replaceable and/or easy to fix as the reason for failure is often a [blown capacitor]([http://www.instructables.com/id/Repair-your-electronics-by-replacing-blown-capacit/). Check out [this guide](http://www.giangrandi.ch/electronics/smpsfix/smpsfix.shtml) for fixing SMPS-type power supplies and [this one](https://groupdiy.com/index.php?topic=19810.0) for fixing older linear transformers.
-* If you can determine that your radio is powered on (via a LED or the characteristic "twung" sound when power is turned on) but nothing else is working, the amplification stage of your radio might be broken. You might hear a very faint hiss, or low levels of volume. This is annoying, because amplifiers are more tricky ro repair (they usually require transistors, which are not produced in the same way as they were back then). The solution here is to bypass the old electronics entirely and plug in your own amplifier, for example one that you salvaged from PC loudspeakers. 
+* If you can determine that your radio is powered on (via a LED or the characteristic "twung" sound when power is turned on) but nothing else is working, the amplification stage of your radio might be broken. You might hear a very faint hiss, or low levels of volume. This is annoying, because amplifiers are more tricky ro repair (they usually require transistors, which are not produced in the same way as they were back then). The solution here is to bypass the old electronics entirely and connect your own amplifier to the loudspeaker, for example one that you salvaged from PC loudspeakers. 
 * If you hear some sound, even if it's crackling, and if turning the volume button is having the expected effect, great. The amplification stage of your radio is working. This means that we'll be able to feed in our modern sound into a vintage amplifier.
 * If your radio has a headphone jack or an auxiliary output, try and test that. Usually, if the secondary amplification is working, chances are that will be working as well.
 * The last step is to test whether the device is able to actually receive radio signals. In short, you will be extremely lucky if your set is still able to receive the right frequency for a given position of the tuning knob. The next section goes into a bit more detail as to why that is, but it gets a bit technical so feel free to skip it. The bottom line is that this is the hardest part of the circuitry to repair, and it would require a lot of dexterity and knowledge that goes beyond what we are trying to achieve here.
@@ -92,7 +102,7 @@ We do not need Java or Wolfram or games or a synthetiser either:
 ```bash
 sudo apt-get -y remove --auto-remove --purge wolfram-engine penguinpuzzle java-common minecraft-pi raspberrypi-artwork sonic-pi 
 ```
-To remove all of them at once, use this README file:
+To remove all of them at once, download this README file and do some bash magic:
 
 ```bash
 grep apt README.md | source /dev/stdin
@@ -124,3 +134,15 @@ You should see something like:
 ```
 
 This means the firmware is running. Press `Ctrl+C` to interrupt.
+
+### Customising the list of channels
+
+The list of channels the radio will loop through is described in the [`radiolist`](firmware/radiolist) file. The original one might not be very helpful for you (it contains mostly French and Austrian stations), so feel free to edit it. The syntax is pretty straightforward, each line is composed of:
+
+```
+address     language_code    name
+```
+
+separated by tabs. The language doesn't matter so much anymore. In a previous version of the firmware, the Pi would access Google speech to pronounce the `name` field in the language specified by `language_code`. For example, you would hear "_BBC Radio 4_" a few instants before the station started playing. But Google decided to withdraw this service, so now you must add your own recording of the station name (or if you don't want this, an empty MP3). 
+
+> Each entry in the `name` column must correspond to a MP3 file in the same directory as the firmware. For example if the name is `BBC_Radio_4`, the script will expect to find `./BBC_Radio_4.mp3`.
