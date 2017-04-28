@@ -163,6 +163,8 @@ separated by tabs. The language doesn't matter so much anymore. In a previous ve
 
 ### Invasive method
 
+* TURN OFF the radio and disconnect the power source.
+
 * Locate the point at which the tuner stage connects to the amplifier stage (in the schematic above, the branch connecting Pin 9 of the TDA1220B to C37) and de-solder the upstream end of the component (in our case the 3KΩ resistor just after pin 9 of TDA1220B).
 
 
@@ -170,8 +172,10 @@ separated by tabs. The language doesn't matter so much anymore. In a previous ve
 
 ![http://i42.tinypic.com/34rw3mg.jpg](http://i42.tinypic.com/34rw3mg.jpg)
 
-* Solder the cable connected to the ground pin (black above) to any ground point of your radio, e.g. a metallic part of the chassis or the ground end of C39. Solder the other cable to the connection you opened at step 1.
+* Solder the cable connected to the ground pin (black above) to any ground point of your radio, e.g. a metallic part of the chassis or the ground end of C39. Solder the other cable to the connection you opened at step 1. 
 
 * Connect the ground loop isolator to your male jack, and the male end of your isolator into the Pi's audio output.
 
-* Now try to
+* Turn on the radio carefully. 
+
+* Now try to play any sound on your RPi. There are some MP3 files in the `firmware` directory of this project, or you can download a test file from the Internet (e.g. `wget https://goo.gl/XJuOUW -O example.mp3 --no-check-certificate && mpg321 example.mp3`).
