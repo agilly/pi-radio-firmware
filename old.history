@@ -1,0 +1,413 @@
+    1  sudo raspi-config
+    2  ifconfig 
+    3  ifconfig wlan0 up
+    4  sudo ifconfig wlan0 up
+    5  ifconfig
+    6  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+    7  sudo reboot
+    8  sudo poweroff
+    9  git clone bitbucket.org/agilly/pi-radio-firmware
+   10  git clone bitbucket.org/agilly/pi-radio-firmware.git
+   11  git clone https://bitbucket.org/agilly/pi-radio-firmware.git
+   12  cd pi-radio-firmware/
+   13  ls
+   14  mkdir firmware
+   15  less firmware
+   16  mv firmware firmware.py
+   17  ls
+   18  mkdir firmware
+   19  mv *mp3 firmware.* radiolist rotary_class.py* firmware
+   20  ls
+   21  emacs README.md
+   22  nano README.md
+   23  man apt-get
+   24  nano README.md
+   25  grep apt README.md
+   26  grep apt README.md | while read line; do `$line`; done
+   27  grep apt README.md | head | source /dev/stdin 
+   28  echo lol
+   29  echo 'grep apt README.md | source /dev/stdin' >> README.md 
+   30  nano README.md
+   31  git add *
+   32  git commit -am
+   33  git commit -am "tidied up files, wrote README"
+   34  got config --global user.email de.angstritter@gmail.com
+   35  git config --global user.email de.angstritter@gmail.com
+   36  git config --global user.name agilly
+   37  git commit -am "tidied up files, wrote README"
+   38  git push origin master
+   39  nano README.md
+   40  sudo reboot
+   41  cd pi-radio-firmware/
+   42  ls
+   43  nano README.md 
+   44  git fetch
+   45  less README.md 
+   46  sudo nano /etc/hosts
+   47  man passwd
+   48  less README.md 
+   49  nano README.md
+   50  sudo passwd pi
+   51  sudo nano /etc/ssh/sshd_config 
+   52  nano /etc/hostname 
+   53  sudo nano /etc/hostname 
+   54  cat /etc/host*
+   55  sudo reboot
+   56  ping google.com
+   57  ping 8.8.8.8
+   58  ifconfig
+   59  ping 8.8.8.8
+   60  ping google.com
+   61  sudo ping google.com
+   62  cd pi-radio-firmware/
+   63  nano README.md 
+   64  sudo nano /etc/ssh/sshd_config 
+   65  grep -v '#' /etc/ssh/sshd_config
+   66  grep -v '#' /etc/ssh/sshd_config | less
+   67  sudo usermod --login admin pi
+   68  ps 
+   69  ps aux | less
+   70  ps aux | awk '$2==623'
+   71  sudo usermod --login admin pi
+   72  sudo kill 623
+   73  sudo usermod --login admin pi
+   74  sudo kill 631
+   75  sudo usermod --login admin pi
+   76  sudo kill 631 && sudo usermod --login admin pi
+   77  sudo usermod -l admin -m -d /home/admin pi
+   78  su root
+   79  ps aux | awk '$2==631'
+   80  sudo passwd root
+   81  su root
+   82  exit
+   83  ls
+   84  pwd
+   85  sudo apt-get install mpg321
+   86  mpg321 pi-radio-firmware/firmware/rfi.mp3 
+   87  cat pi-radio-firmware/firmware/radiolist 
+   88  cat pi-radio-firmware/firmware/radiolist | cut -f1
+   89  cat pi-radio-firmware/firmware/radiolist | cut -f1 | head -1
+   90  mpg321 $(cat pi-radio-firmware/firmware/radiolist | cut -f1 | head -1)
+   91  pi-radio-firmware/firmware/firmware.py 
+   92  sudo apt-get
+   93  sudo apt-get install llist
+   94  pip install llist
+   95  sudo apt-get install python3-llist
+   96  which python
+   97  python
+   98  sudo apt-get install python2.7-dev
+   99  pip install llist
+  100  sudo pip install llist
+  101  pi-radio-firmware/firmware/firmware.py 
+  102  pwd
+  103  nano pi-radio-firmware/firmware/firmware.py
+  104  pi-radio-firmware/firmware/firmware.py 
+  105  nano pi-radio-firmware/firmware/firmware.py
+  106  pi-radio-firmware/firmware/firmware.py 
+  107  sudo nano /etc/ssh/sshd_config 
+  108  cd pi-radio-firmware/
+  109  git checkout
+  110  git pull origin master
+  111  git commit -am "Readme"
+  112  git pull origin master
+  113  nano README.md 
+  114  git pull origin master
+  115  git add README.md 
+  116  git pull origin master
+  117  git commit -am "Readme"
+  118  git pull origin master
+  119  git push origin master
+  120  head firmware/firmware.py
+  121  ping google.com
+  122  sudo ping google.com
+  123  ifconfig
+  124  sudo reboot
+  125  while true; date;sleep 1; done
+  126  while true; do date;sleep 1; done
+  127  exit
+  128  grep -v '#' /etc/ssh/sshd_config | less
+  129  sudo nano /etc/ssh/sshd_config 
+  130  ip addr
+  131  sudo ping 192.168.0.10
+  132  sudo ping 8.8.8.8
+  133  sudo ping 192.168.0.10
+  134  sudo pi-radio-firmware/service/keepalive.sh 
+  135  nano pi-radio-firmware/service/keepalive.sh
+  136  sudo pi-radio-firmware/service/keepalive.sh 
+  137  nano pi-radio-firmware/service/keepalive.sh
+  138  sudo pi-radio-firmware/service/keepalive.sh 
+  139  sudo service sshd restart
+  140  sudo nano /etc/ssh/sshd_config 
+  141  sudo service sshd restart
+  142  sudo service ssh restart
+  143  ipa ddr
+  144  ip addr
+  145  sudo iwconfig wlan0 power off
+  146  sudo nano /etc/ssh/sshd_config 
+  147  sudo service ssh restart
+  148  sudo service sshd restart
+  149  sudo rpi-update 
+  150  sudo reboot
+  151  exit
+  152  htop
+  153  sudo apt-get install htop
+  154  htop
+  155  exit
+  156  htop
+  157  netstat -lnpt
+  158  less /etc/modprobe.d/ipv6.conf
+  159  sudo nano /etc/modprobe.d/ipv6.conf
+  160  sudo reboot
+  161  sudo raspi-config 
+  162  less /etc/rc.local 
+  163  sudo ifdown eth0
+  164  sudo ifdown wlan0
+  165  sudo ifup --force wlan0
+  166  wget google.com
+  167  nano pi-radio-firmware/service/keepalive.sh
+  168  sudo nano /etc/ssh/sshd_config 
+  169  sudo service sshd restart
+  170  sudo service ssh restart
+  171  sudo ping 192.168.0.10
+  172  sudo pi-radio-firmware/service/keepalive.sh 
+  173  sudo ifup --force wlan0
+  174  sudo nano /etc/ssh/sshd_config 
+  175  nano pi-radio-firmware/service/keepalive.sh
+  176  sudo pi-radio-firmware/service/keepalive.sh 
+  177  htop
+  178  sudo iwconfig wlan0 power
+  179  sudo iwconfig wlan0 power off
+  180  dmesg | less
+  181  sudo nano /etc/ssh/sshd_config 
+  182  dmesg |less
+  183  sudo su
+  184  sudo reboot
+  185  modinfo r8712u
+  186  echo 'options r8712u low_power=0 power_mgnt=0 ht_enable=0' >> /etc/modprobe.d/modprobe.conf 
+  187  sudo su
+  188  sudo nano /etc/wpa_supplicant/wpa_supplicant.conf 
+  189  wolfram 
+  190  sudo apt-get remove wolfram
+  191  htop
+  192  dpkg -l
+  193  dpkg -l | grep wolfram
+  194  sudo apt-get remove wolfram*
+  195  iwconfig wlan0
+  196  ifconfig wlan0
+  197  sudo reboot
+  198  htop
+  199  iwconfig wlan0 rate 24M
+  200  exit
+  201  ifconfig
+  202  wget google.com
+  203  sudo pi-radio-firmware/service/keepalive.sh 
+  204  nano pi-radio-firmware/service/keepalive.sh
+  205  sudo pi-radio-firmware/service/keepalive.sh 
+  206  wget google.com
+  207  iwconfig
+  208  sudo pi-radio-firmware/service/keepalive.sh ifconfig
+  209  ifconfig
+  210  ifconfig wlan0
+  211  iwconfig 
+  212  sudo ifup --force wlan0
+  213  iwconfig 
+  214  sudo ping 192.168.0.10
+  215  sudo ifdown wlan0
+  216  sudo ifup --force wlan0
+  217  sudo reboot
+  218  dmesg | grep 8712
+  219  sudo pi-radio-firmware/service/keepalive.sh 
+  220  nano pi-radio-firmware/service/keepalive.sh
+  221  sudo pi-radio-firmware/service/keepalive.sh 
+  222  nano pi-radio-firmware/service/keepalive.sh
+  223  sudo pi-radio-firmware/service/keepalive.sh 
+  224  sudo nano /etc/network/interfaces
+  225  ifconfig
+  226  sudo nano /etc/network/interfaces
+  227  sudo pi-radio-firmware/service/keepalive.sh 
+  228  sudo reboot
+  229  sudo raspi-config 
+  230  ifconfig wlan0
+  231  iwconfig wlan0
+  232  iwconfig --help
+  233  iwconfig wlan0 rate 24M
+  234  sudo iwconfig wlan0 rate 24M
+  235  iwconfig wlan0
+  236  ifconfig wlan0
+  237  sudo iwconfig wlan0 rate 11M
+  238  iwconfig wlan0
+  239  iw wlan0
+  240  iw wlan0 | less
+  241  iw wlan0 commands
+  242  iw wlan0 commands | less
+  243  iw commands
+  244  iw commands | less
+  245  iw wlan0 | less
+  246  iw dev wlan0 info | less
+  247  iw commands | less
+  248  iw wlan0 | less
+  249  iw dev
+  250  iwconfig
+  251  iw wlan0 scan
+  252  sudo iw wlan0 scan
+  253  iw list
+  254  sudo iw dev
+  255  sudo iw devwlan0 scan
+  256  lsmod 
+  257  ll -rt /var/log/
+  258  ls -ll -rt /var/log/
+  259  less /var/log/syslog 
+  260  lsusb
+  261  apt-cache search realtek
+  262  sudo apt-get install firmware-realtek
+  263  sudo reboot
+  264  nano pi-radio-firmware/service/keepalive.sh
+  265  exit
+  266  sudo poweroff
+  267  nano pi-radio-firmware/service/keepalive.sh
+  268  exit
+  269  htop
+  270  sudo apt-get install monit
+  271  htop
+  272  less /etc/monit/monitrc
+  273  sudo less /etc/monit/monitrc
+  274  sudo nano /etc/monit/monitrc
+  275  mv pi-radio-firmware/firmware/firmware.py pi-radio-firmware/firmware/firmware
+  276  nano pi-radio-firmware/firmware/firmware
+  277  sudo nano /etc/monit/monitrc
+  278  nano pi-radio-firmware/firmware/firmware
+  279  man monit
+  280  monit
+  281  sudo monit
+  282  sudo nano /etc/monit/monitrc
+  283  sudo monit
+  284  tail -f /var/log/monit.log 
+  285  less /var/log/monit.log
+  286  top
+  287  htop
+  288  less /var/log/monit.log
+  289  sudo monit -c /etc/monit/monitrc
+  290  less /var/log/monit.log
+  291  sudo nano /etc/monit/monitrc
+  292  sudo monit reload
+  293  sudo nano /etc/monit/monitrc
+  294  sudo monit reload
+  295  head -265 /etc/monit/monitrc
+  296  sudo head -265 /etc/monit/monitrc
+  297  sudo nano /etc/monit/monitrc
+  298  ls -lrt /tmp
+  299  sudo monit reload
+  300  sudo nano /etc/monit/monitrc
+  301  sudo monit reload
+  302  tail -f /var/log/monit.log 
+  303  htop
+  304  tail -f /var/log/monit.log 
+  305  /home/admin/pi-radio-firmware/firmware/firmware
+  306  sudo nano /etc/monit/monitrc
+  307  sudo monit reload
+  308  sudo nano /etc/monit/monitrc
+  309  which sudo
+  310  sudo nano /etc/monit/monitrc
+  311  sudo monit reload
+  312  tail -f /var/log/monit.log 
+  313  htop
+  314  tail -f /var/log/monit.log 
+  315  tail -f /var/log/monit.log &
+  316  kill 1737
+  317  sudo kill 1737
+  318  sudo pi-radio-firmware/service/keepalive.sh 
+  319  ls -lrt /var/log
+  320  less /var/log/messages 
+  321  less /var/log/syslog 
+  322  echo -e "\[$(date\])"
+  323  echo -e "\[$(date)\])"
+  324  echo -e "\[$(date)\]"
+  325  echo -e "[$(date)]"
+  326  nano pi-radio-firmware/service/keepalive.sh 
+  327  sudo nano /etc/monit/monitrc
+  328  sudo monit reload
+  329  sudo nano /etc/monit/monitrc
+  330  head -272 /etc/monit/monitrc
+  331  sudo head -272 /etc/monit/monitrc
+  332  sudo nano /etc/monit/monitrc
+  333  sudo monit reload
+  334  sudo nano /etc/monit/monitrc
+  335  sudo monit reload
+  336  sudo nano /etc/monit/monitrc
+  337  sudo monit reload
+  338  tail -f /var/log/monit.log
+  339  sudo nano /etc/monit/monitrc
+  340  sudo monit reload
+  341  sudo nano /etc/monit/monitrc
+  342  sudo monit reload
+  343  sudo nano /etc/monit/monitrc
+  344  sudo monit reload
+  345  exit
+  346  htop
+  347  exit
+  348  less /var/log/monit.log 
+  349  sudo nano /etc/monit/monitrc
+  350  sudo monit reload
+  351  less /var/log/monit.log 
+  352  cd pi-radio-firmware/
+  353  ls firmware/
+  354  ls
+  355  mpg321 firmware/hotelcostes.mp3 
+  356  mpg321 firmware/fm4
+  357  mpg321 firmware/fm4.mp3 
+  358  cd firmware/
+  359  cat radiolist 
+  360  mpg321 radioclassique.mp3 http://broadcast.infomaniak.net/radioclassique-high.mp3
+  361  mpg321 radioclassique.mp3 && http://broadcast.infomaniak.net/radioclassique-high.mp3
+  362  mpg321 radioclassique.mp3 && mpg321 http://broadcast.infomaniak.net/radioclassique-high.mp3
+  363  nano firmware.py
+  364  nano firmware
+  365  nano --syntax=python firmware
+  366  head radio
+  367  head radiolist 
+  368  nano --syntax=python firmware
+  369  ps aux | grep firmware
+  370  kill 1755
+  371  sudo kill 1755
+  372  tail -f /var/log/monit.log
+  373  tail -f /var/log/monit.log &
+  374  ps aux | grep firmware
+  375  kill 2991
+  376  sudo  /home/admin/pi-radio-firmware/firmware/firmware
+  377  ls /home/admin/pi-radio-firmware/firmware/fip.mp3
+  378  ls
+  379  exit
+  380  cd pi-radio-firmware/
+  381  cd firmware/
+  382  cat radiolist 
+  383  ps aux | grep firmware
+  384  sudo kill 2991
+  385  sudo kill 3043
+  386  ps aux | grep 321
+  387  kill 3159
+  388  sudo kill 3159
+  389  tail -f /var/log/monit.log &
+  390  exit
+  391  cat pi-radio-firmware/firmware/radiolist 
+  392  mpg321 http://stream.rfi.fr/rfimonde/all/rfimonde-64k.mp3
+  393  mpg321 http://rfi-monde-96k.scdn.arkena.com/rfimonde-96k.mp3
+  394  nano pi-radio-firmware/firmware/radiolist 
+  395  exit
+  396  alsamixer 
+  397  sudo raspi-config 
+  398  exit
+  399  ls
+  400  cd pi-radio-firmware/
+  401  ls
+  402  cd firmware/
+  403  ls
+  404  head radiolist 
+  405  mpg321 http://rfi-monde-96k.scdn.arkena.com/rfimonde-96k.mp3
+  406  mpg321 http://www.listenlive.eu/rfimonde.m3u
+  407  mpg321 http://direct.rfi.fr/monde/mp3/64k
+  408  mpg321 mms://wmod.streaming.rfi.fr.edgestreams.net/rfi/francais/audio/directs/r001/rfimonde.wsx
+  409  mpg321 http://mp3.live.tv-radio.com/rfimonde/all/rfimonde-64k.mp3
+  410  mpg321 http://live02.rfi.fr/rfimonde-64.mp3
+  411  nano radiolist 
+  412  sudo reboot
+  413  history > old.history

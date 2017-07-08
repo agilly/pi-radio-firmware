@@ -1,0 +1,15 @@
+  set logfile /var/log/monit.log
+  set idfile /var/lib/monit/id
+  set statefile /var/lib/monit/state
+  set eventqueue
+   include /etc/monit/conf.d/*
+
+check process firmware with pidfile "/tmp/firmware.pid" 
+	start program = "/usr/bin/sudo /home/admin/pi-radio-firmware/firmware/firmware"
+
+
+check host google.com with address google.com
+        start program = "/sbin/ifup --force wlan0" with timeout 30 seconds
+        stop program = "/sbin/ifdown wlan0"
+	if failed ping with timeout 2 seconds then restart
+	if 2 restarts within 15 cycles then exec "/sbin/shutdown -r now"

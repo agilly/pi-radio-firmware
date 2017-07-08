@@ -1,9 +1,9 @@
-http://audio.scdn.arkena.com/11016/fip-midfi128.mp3	FR	fip
-http://stream.rfi.fr/rfimonde/all/rfimonde-64k.mp3	FR	rfi
+http://live02.rfi.fr/rfimonde-64.mp3	FR	rfi
+http://direct.fipradio.fr/live/fip-midfi.mp3	FR	fip
 http://broadcast.infomaniak.net/radionova-high.mp3	FR	radionova
-http://audio.scdn.arkena.com/11006/franceinfo-midfi128.mp3	FR	franceinfo
+http://direct.franceinfo.fr/live/franceinfo-midfi.mp3	FR	franceinfo
 http://broadcast.infomaniak.net/radioclassique-high.mp3 	FR	radioclassique
-http://audio.scdn.arkena.com/11010/franceculture-midfi128.mp3	FR	franceculture
+http://direct.franceculture.fr/live/franceculture-midfi.mp3	FR	franceculture
 http://hotelcostes.ice.infomaniak.ch/hotelcostes-128.mp3	FR	hotelcostes
 http://mp3stream3.apasf.apa.at:8000	DE	oe1
 http://mp3stream1.apasf.apa.at:8000	DE	fm4
